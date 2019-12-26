@@ -3,12 +3,11 @@ import {
   BeforeInsert,
   Column,
   Entity,
-  PrimaryColumn,
-  PrimaryGeneratedColumn
+  PrimaryColumn
 } from "typeorm";
 import uuidv4 = require("uuid/v4");
 
-@Entity()
+@Entity("users")
 export class User extends BaseEntity {
   @PrimaryColumn("uuid")
   id!: string;
