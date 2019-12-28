@@ -1,12 +1,16 @@
 {
-  "name": "new-typeorm-project",
+  "name": "graphql-ts-server-boilerplate",
   "version": "0.0.1",
   "description": "Awesome project developed with TypeORM.",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/jest": "^24.0.24",
     "@types/node": "^13.1.0",
     "@types/uuid": "^3.4.6",
+    "@types/yup": "^0.26.27",
     "gql2ts": "^1.10.1",
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.2",
     "ts-jest": "^24.2.0",
     "ts-node": "8.5.4",
     "tslint": "^5.20.1",
@@ -14,23 +18,18 @@
     "typescript": "3.7.4"
   },
   "dependencies": {
-    "@types/bcryptjs": "^2.4.2",
     "bcryptjs": "^2.4.3",
     "graphql-import": "^0.7.1",
     "graphql-request": "^1.8.2",
     "graphql-yoga": "^1.18.3",
-    "mysql": "^2.17.1",
-    "nodemon": "^2.0.2",
     "pg": "^7.15.1",
     "reflect-metadata": "^0.1.13",
-    "tslint": "^5.20.1",
-    "tslint-react": "^4.1.0",
     "typeorm": "0.2.22",
-    "uuid": "^3.3.3"
+    "yup": "^0.28.0"
   },
   "scripts": {
-    "start": "nodemon --exec ts-node --files src/index.ts",
-    "test": "NODE_ENV=test jest --watch",
+    "start": "NODE_ENV=development nodemon --exec ts-node --files src/index.ts",
+    "test": "NODE_ENV=test jest --detectOpenHandles --forceExit",
     "gen-schema-types": "gql2ts src/schema.graphql -o src/types/schema.d.ts"
   },
   "jest": {
